@@ -1,4 +1,4 @@
-package br.ifsc.edu.meuapp;
+package model;
 
 public class Pessoa {
 
