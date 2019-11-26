@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "569652844356",
+    "firebase_url": "https://meuapp-8742e.firebaseio.com",
+    "project_id": "meuapp-8742e",
+    "storage_bucket": "meuapp-8742e.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:569652844356:android:d69ff1b8ed1e8d0a0ca911",
+        "android_client_info": {
+          "package_name": "br.ifsc.edu.meuapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "569652844356-o157109o3j6132ursj8ohc6qe7di6c6r.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "br.ifsc.edu.meuapp",
+            "certificate_hash": "bec76724069a30dd491ec36d7ee0be808b79c941"
+          }
+        },
+        {
+          "client_id": "569652844356-un1u3or0urpqshpcs3veo1ockm025sc8.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBm5NiufkgoTBzCA0B5zScl1GROKgQNqzU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "569652844356-un1u3or0urpqshpcs3veo1ockm025sc8.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
