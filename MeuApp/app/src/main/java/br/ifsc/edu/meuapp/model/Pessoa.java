@@ -1,4 +1,4 @@
-package model;
+package br.ifsc.edu.meuapp.model;
 
 public class Pessoa {
 
@@ -8,6 +8,10 @@ public class Pessoa {
     String sexo;
     String email;
     String senha;
+
+    public Pessoa(){
+
+    }
 
     public Pessoa( String nome, String cpf, String sexo) {
         this.nome = nome;

@@ -7,21 +7,23 @@
     android:orientation="vertical"
     tools:context=".PrincipalActivity">
 
-    <TextView
-        android:id="@+id/textView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Olá, voce está logado!"
-        tools:layout_editor_absoluteX="117dp"
-        tools:layout_editor_absoluteY="144dp" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:layout_width="match_parent"
+        android:layout_height="603dp"
+        android:id="@+id/idRec"/>
 
     <Button
-        android:id="@+id/btnlogout"
-        android:layout_width="wrap_content"
+        android:id="@+id/btnCadPessoa"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Sair"
+        android:text="Cadastrar Pessoa" />
+    <Button
+        android:id="@+id/btnlogout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         android:onClick="logOut"
+        android:text="Sair"
         tools:layout_editor_absoluteX="154dp"
         tools:layout_editor_absoluteY="244dp" />
-
 </LinearLayout>

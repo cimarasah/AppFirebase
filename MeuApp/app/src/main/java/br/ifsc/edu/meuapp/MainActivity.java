@@ -21,7 +21,8 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.DataSnapshot;
 
-import model.Pessoa;
+import br.ifsc.edu.meuapp.model.Pessoa;
+
 
 public class MainActivity extends AppCompatActivity {
 
@@ -48,7 +49,7 @@ public class MainActivity extends AppCompatActivity {
         //Pessoa pessoa = new Pessoa( "Cimara", "07403729471", "f");
 
         //databaseReference.child("pessoas").push().setValue(pessoa);-
-        databaseReference.child("pessoas").addChildEventListener(new ChildEventListener() {
+        /*databaseReference.child("pessoas").addChildEventListener(new ChildEventListener() {
             @Override
             public void onChildAdded(@NonNull DataSnapshot dataSnapshot, @Nullable String s) {
                 Pessoa p = dataSnapshot.getValue(Pessoa.class);
@@ -74,7 +75,7 @@ public class MainActivity extends AppCompatActivity {
             public void onCancelled(@NonNull DatabaseError databaseError) {
 
             }
-        });
+        });*/
 
     }
 
@@ -111,5 +112,11 @@ public class MainActivity extends AppCompatActivity {
             }
         });
     }
+    public void resetSenha(View view){
+        if(!login.getText().toString().trim().equals("")){
+            mAuth.sendPasswordResetEmail(login.getText().toString());
+        }
+    }
+
 
 }
