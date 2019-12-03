@@ -72,7 +72,7 @@ public class PrincipalActivity extends AppCompatActivity {
 
 
         final List<Pessoa> arrayListPessoa = new ArrayList<Pessoa>();
-        mRef = FirebaseDatabase.getInstance().getReference();
+        mRef = FirebaseDatabase.getInstance().getReference("pessoas");
         mRef.addValueEventListener(new ValueEventListener() {
 
             @Override
@@ -85,7 +85,7 @@ public class PrincipalActivity extends AppCompatActivity {
                 }
                 PessoaAdapter pAdapter = new PessoaAdapter(
                         getApplicationContext(),
-                        // R.layout.item_pessoa_list,
+                         R.layout.item_pessoa_list,
                         arrayListPessoa
                 );
                 recyclerView.setAdapter(pAdapter);

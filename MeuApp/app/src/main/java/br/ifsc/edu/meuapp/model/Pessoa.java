@@ -2,7 +2,7 @@ package br.ifsc.edu.meuapp.model;
 
 public class Pessoa {
 
-    int id;
+    public String id;
     String nome;
     String cpf;
     String sexo;
@@ -19,11 +19,8 @@ public class Pessoa {
         this.sexo = sexo;
     }
 
-    public int getId() {
-        return id;
-    }
 
-    public void setId(int id) {
+    public void setId(String id) {
         this.id = id;
     }
 

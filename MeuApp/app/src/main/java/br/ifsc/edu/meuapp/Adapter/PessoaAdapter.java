@@ -37,6 +37,11 @@ public class PessoaAdapter extends RecyclerView.Adapter<PessoaAdapter.MyViewHold
 
     @Override
     public void onBindViewHolder(@NonNull MyViewHolder holder, int position) {
+        Pessoa ṕessoa = mDataSet.get(position);
+        holder.tvNome.setText(ṕessoa.getNome());
+        holder.tvCpf.setText(ṕessoa.getCpf());
+        holder.tvSexo.setText(ṕessoa.getSexo());
+        holder.tvId.setText(ṕessoa.id);
 
     }
 
@@ -50,10 +55,10 @@ public class PessoaAdapter extends RecyclerView.Adapter<PessoaAdapter.MyViewHold
 
         public MyViewHolder(@NonNull View itemView){
             super(itemView);
-//            tvId = itemView.findViewById(R.id.textViewId);
-//            tvNome = itemView.findViewById(R.id.textViewId);
-//            tvCpf = itemView.findViewById(R.id.textViewId);
-//            tvSexo = itemView.findViewById(R.id.textViewId);
+            tvId = itemView.findViewById(R.id.textViewId);
+            tvNome = itemView.findViewById(R.id.textViewNome);
+            tvCpf = itemView.findViewById(R.id.textViewCpf);
+            tvSexo = itemView.findViewById(R.id.textViewSexo);
         }
 
     }
