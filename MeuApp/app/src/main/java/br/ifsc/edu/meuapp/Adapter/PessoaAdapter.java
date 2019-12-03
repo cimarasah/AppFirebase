@@ -1,5 +1,7 @@
 package br.ifsc.edu.meuapp.Adapter;
 
+import android.content.Context;
+import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
@@ -7,15 +9,30 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import br.ifsc.edu.meuapp.R;
+import br.ifsc.edu.meuapp.model.Pessoa;
 
 public class PessoaAdapter extends RecyclerView.Adapter<PessoaAdapter.MyViewHolder> {
 
+    Context mContext;
+    int mResource;
+    List<Pessoa> mDataSet;
+
+    public PessoaAdapter(Context mContext, int mResource, List<Pessoa> mDataSet){
+        this.mContext = mContext;
+        this.mDataSet = mDataSet;
+        this.mResource = mResource;
+    }
 
     @NonNull
     @Override
     public MyViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        return null;
+        LayoutInflater layoutInflater = LayoutInflater.from(mContext);
+        View itemView = layoutInflater.inflate(mResource,parent,false);
+        return new MyViewHolder(itemView);
     }
 
     @Override
@@ -25,7 +42,7 @@ public class PessoaAdapter extends RecyclerView.Adapter<PessoaAdapter.MyViewHold
 
     @Override
     public int getItemCount() {
-        return 0;
+        return mDataSet.size();
     }
 
     public class MyViewHolder extends RecyclerView.ViewHolder{

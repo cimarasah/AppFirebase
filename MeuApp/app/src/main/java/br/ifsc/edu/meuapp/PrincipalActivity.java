@@ -2,6 +2,7 @@ package br.ifsc.edu.meuapp;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.DividerItemDecoration;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -17,6 +18,12 @@ import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import br.ifsc.edu.meuapp.Adapter.PessoaAdapter;
+import br.ifsc.edu.meuapp.model.Pessoa;
 
 public class PrincipalActivity extends AppCompatActivity {
 
@@ -58,12 +65,30 @@ public class PrincipalActivity extends AppCompatActivity {
         RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(getApplicationContext());
         recyclerView.setLayoutManager(layoutManager);
 
+        recyclerView.addItemDecoration(
+                new DividerItemDecoration(getApplicationContext(),
+                        DividerItemDecoration.VERTICAL)
+        );
 
+
+        final List<Pessoa> arrayListPessoa = new ArrayList<Pessoa>();
         mRef = FirebaseDatabase.getInstance().getReference();
         mRef.addValueEventListener(new ValueEventListener() {
+
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 Log.d("RetriveData",  dataSnapshot.toString());
+                Pessoa p;
+                for (DataSnapshot obj:dataSnapshot.getChildren()){
+                    p = obj.getValue(Pessoa.class);
+                    arrayListPessoa.add(p);
+                }
+                PessoaAdapter pAdapter = new PessoaAdapter(
+                        getApplicationContext(),
+                        // R.layout.item_pessoa_list,
+                        arrayListPessoa
+                );
+                recyclerView.setAdapter(pAdapter);
             }
 
             @Override
@@ -71,6 +96,8 @@ public class PrincipalActivity extends AppCompatActivity {
 
             }
         });
+
+
 
     }
 
